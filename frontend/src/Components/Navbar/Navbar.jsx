@@ -4,10 +4,17 @@ import { Link } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
 import logo from '../Assets/logo.PNG'
 import cart_icon from '../Assets/cart.PNG'
+import nav_dropdown from '../Assets/dropdown.PNG'
 const Navbar = () => {
 
     const [menu, setMenu] = React.useState("home");
     const {getTotalCartItems} = useContext(ShopContext);
+    const menuRef = React.useRef();
+
+    const dropdown_toggle = (e) => {
+        menuRef.current.classList.toggle('nav-menu-visible');
+        e.target.classList.toggle('open');
+    }
 
     return (
         <div className='navbar'>
@@ -15,7 +22,8 @@ const Navbar = () => {
                 <img src={logo} alt='logo'/>
                 <p>MOONLIGHT JOURNALS</p>
             </div>
-            <ul className='nav-menu'>
+            <img className='nav-dropdown' onClick={dropdown_toggle} src={nav_dropdown} alt='dropdown' />
+            <ul ref={menuRef}className='nav-menu'>
                 <li onClick={()=>{setMenu("home")}}><Link style={{textDecoration: 'none'}} to='/'>Home</Link>{menu==="home"?<hr/>:<></>} </li>
                 <li onClick={()=>{setMenu("holo")}}><Link style={{textDecoration: 'none'}} to='/holo'>Holographic Journals</Link>{menu==="holo"?<hr/>:<></>}</li>
                 <li onClick={()=>{setMenu("std")}}><Link style={{textDecoration: 'none'}} to='/std'>Standard Journals</Link>{menu==="std"?<hr/>:<></>}</li>
