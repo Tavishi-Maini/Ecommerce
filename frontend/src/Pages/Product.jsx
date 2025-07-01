@@ -17,7 +17,6 @@ const Product = () => {
             <ProductDisplay product={product}/>
             <DescriptionBox/>
             <RelatedProducts/>
-
         </div>
     );
     

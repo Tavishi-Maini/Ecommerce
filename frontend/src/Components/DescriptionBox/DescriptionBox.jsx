@@ -1,4 +1,5 @@
 import React from 'react';
+import './DescriptionBox.css'; // Assuming you have a CSS file for styling
 
 const DescriptionBox = () => {
     return (
