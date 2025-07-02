@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
 import logo from '../Assets/logo.PNG'
 import cart_icon from '../Assets/cart.PNG'
-import nav_dropdown from '../Assets/dropdown.PNG'
+import nav_dropdown from '../Assets/dropdown_2.png';
 const Navbar = () => {
 
     const [menu, setMenu] = React.useState("home");
