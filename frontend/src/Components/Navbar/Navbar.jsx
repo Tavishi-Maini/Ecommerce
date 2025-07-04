@@ -23,7 +23,7 @@ const Navbar = () => {
                 <p>MOONLIGHT JOURNALS</p>
             </div>
             <img className='nav-dropdown' onClick={dropdown_toggle} src={nav_dropdown} alt='dropdown' />
-            <ul ref={menuRef}className='nav-menu'>
+            <ul ref={menuRef} className='nav-menu'>
                 <li onClick={()=>{setMenu("home")}}><Link style={{textDecoration: 'none'}} to='/'>Home</Link>{menu==="home"?<hr/>:<></>} </li>
                 <li onClick={()=>{setMenu("holo")}}><Link style={{textDecoration: 'none'}} to='/holo'>Holographic Journals</Link>{menu==="holo"?<hr/>:<></>}</li>
                 <li onClick={()=>{setMenu("std")}}><Link style={{textDecoration: 'none'}} to='/std'>Standard Journals</Link>{menu==="std"?<hr/>:<></>}</li>
